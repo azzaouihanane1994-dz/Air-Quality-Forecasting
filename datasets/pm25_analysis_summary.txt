@@ -1,0 +1,57 @@
+PM2.5 ANALYSIS (NO TRAIN/TEST SPLIT)
+================================================================================
+
+Loaded: datasets\global_airpollution_2015_2024_flat.npz
+Targets: ['eac4:pm2p5', 'eac4:pm10', 'eac4:go3', 'eac4:no2']
+Stored pm25_threshold in file: 25.0 (unit depends on prep)
+Grid: H=27, W=29, cells=783
+
+Cartopy available: False
+
+PM2.5 units inference:
+  All samples: kg/m³ -> µg/m³ (auto, q95=1.40e-07)
+
+PM2.5 distribution (all samples) [µg/m³]:
+    0th percentile:    0.000
+    1th percentile:    0.000
+    5th percentile:    2.520
+   25th percentile:   15.278
+   50th percentile:   35.373
+   75th percentile:   66.506
+   95th percentile:  140.231
+   99th percentile:  225.679
+  100th percentile: 1893.084
+
+Classification stats (recomputed from PM2.5 in µg/m³):
+  All: thr=15.0 µg/m³ -> polluted=2156938 (0.7541), clean=703361 (0.2459)
+  All: thr=25.0 µg/m³ -> polluted=1774469 (0.6204), clean=1085830 (0.3796)
+  All: thr=35.0 µg/m³ -> polluted=1441492 (0.5040), clean=1418807 (0.4960)
+
+Daily mean PM2.5 [µg/m³] (All, threshold=25.0):
+  mean of daily means: 48.752
+  min/median/max: 12.583 / 46.471 / 170.274
+
+Daily fraction of polluted cells (All, thr=25.0 µg/m³):
+  mean fraction:       0.620
+  min/median/max:      0.135 / 0.635 / 0.997
+
+
+Agreement with existing classification in file (assuming thr=25.0 µg/m³):
+  agreement with existing labels at thr=25.0 µg/m³: 2860299/2860299 (1.0000), different=0
+
+Plots saved:
+  pm25_hist_all.png
+  pm25_daily_fraction_all.png
+
+Random 5 days for pollution maps (All, thr=25.0 µg/m³):
+  2016-01-27 -> polluted fraction = 0.685
+  2016-08-10 -> polluted fraction = 0.759
+  2019-07-31 -> polluted fraction = 0.715
+  2022-05-27 -> polluted fraction = 0.756
+  2023-06-12 -> polluted fraction = 0.711
+  Saved pollution map: datasets\pollution_samples\all_polluted_map_2016-01-27.png
+  Saved pollution map: datasets\pollution_samples\all_polluted_map_2016-08-10.png
+  Saved pollution map: datasets\pollution_samples\all_polluted_map_2019-07-31.png
+  Saved pollution map: datasets\pollution_samples\all_polluted_map_2022-05-27.png
+  Saved pollution map: datasets\pollution_samples\all_polluted_map_2023-06-12.png
+Random pollution sample maps saved under: datasets\pollution_samples

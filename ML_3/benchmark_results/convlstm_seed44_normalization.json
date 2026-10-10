@@ -1,0 +1,38 @@
+{
+  "config": {
+    "train_end_year": 2022,
+    "val_year": 2023,
+    "test_year": 2024,
+    "history": 7,
+    "horizon": 1,
+    "batch_size": 64,
+    "num_epochs": 3,
+    "lr": 0.001,
+    "weight_decay": 1e-05,
+    "grad_clip": 1.0,
+    "seed": 44,
+    "max_norm_clip": 10.0,
+    "run_training": true
+  },
+  "model_key": "convlstm",
+  "model_label": "ConvLSTM",
+  "target_mean_ugm3": {
+    "eac4:pm2p5": 48.818748474121094,
+    "eac4:pm10": 86.6264877319336,
+    "eac4:go3": 67.74275970458984,
+    "eac4:no2": 0.7249512672424316
+  },
+  "target_std_ugm3": {
+    "eac4:pm2p5": 48.28630065917969,
+    "eac4:pm10": 89.43010711669922,
+    "eac4:go3": 18.17644691467285,
+    "eac4:no2": 2.581763744354248
+  },
+  "wind_features_not_standardized": [
+    "eac4:u10",
+    "eac4:v10",
+    "u100",
+    "v100"
+  ],
+  "train_target_index_count": 2915
+}

@@ -1,0 +1,106 @@
+GLOBAL AIR POLLUTION DATASET SANITY CHECK
+================================================================================
+
+################################################################################
+# 4D DATASET
+################################################################################
+File: datasets\global_airpollution_2015_2024_4d.npz
+Keys: ['X_4d', 'aqi_bounds_go3_ugm3', 'aqi_bounds_no2_ugm3', 'aqi_bounds_pm10_ugm3', 'aqi_bounds_pm25_ugm3', 'aqi_class_names', 'dates_4d', 'feature_names', 'grid_shape_4d', 'lat', 'lon', 'pm25_threshold', 'target_names', 'y_aqi_4d', 'y_class_4d', 'y_reg_4d']
+
+X_4d shape:        (3653, 48, 27, 29)  # (days, features, lat, lon)
+y_reg_4d shape:    (3653, 4, 27, 29)  # (days, 4, lat, lon)
+y_class_4d shape:  (3653, 1, 27, 29)  # (days, 1, lat, lon)  [binary PM2.5]
+y_aqi_4d shape:    (3653, 1, 27, 29)  # (days, 1, lat, lon)  [multi-class AQI]
+
+Grid: lat=27, lon=29, total cells=783
+Features (non-target): 48
+Regression targets: 4 -> [np.str_('eac4:pm2p5'), np.str_('eac4:pm10'), np.str_('eac4:go3'), np.str_('eac4:no2')]
+PM2.5 threshold for binary classification: 25.0 µg/m³
+
+AQI class names (integer index -> name):
+  0: good
+  1: moderate
+  2: unhealthy
+  3: very_unhealthy_or_worse
+
+AQI concentration bounds (µg/m³) per pollutant:
+  PM2.5: [15. 25. 50.]
+  PM10 : [ 30.  50. 100.]
+  O3   : [ 80. 120. 180.]
+  NO2  : [20. 40. 80.]
+
+Days (unique): 3653
+Date range: 2015-01-01  -->  2024-12-31
+
+First 10 feature names:
+  - eac4:u10
+  - eac4:v10
+  - eac4:d2m
+  - eac4:t2m
+  - eac4:lsm
+  - eac4:pm1
+  - eac4:z
+  - eac4:sp
+  - eac4:co
+  - eac4:aermr04
+  ... (total 48 features)
+
+Global binary PM2.5 classification statistics (all days):
+  polluted cells (label=1): 1774469
+  total cells:              2860299
+  polluted fraction:        0.6204
+
+Global AQI class distribution (all days):
+  class 0 (good): 442140 (0.1546)
+  class 1 (moderate): 605172 (0.2116)
+  class 2 (unhealthy): 749552 (0.2621)
+  class 3 (very_unhealthy_or_worse): 1063435 (0.3718)
+
+
+################################################################################
+# FLAT DATASET
+################################################################################
+File: datasets\global_airpollution_2015_2024_flat.npz
+Keys: ['X_flat', 'aqi_bounds_go3_ugm3', 'aqi_bounds_no2_ugm3', 'aqi_bounds_pm10_ugm3', 'aqi_bounds_pm25_ugm3', 'aqi_class_names', 'dates_flat', 'feature_names', 'grid_shape_4d', 'lat_flat', 'lon_flat', 'pm25_threshold', 'target_names', 'y_aqi_flat', 'y_class_flat', 'y_reg_flat']
+
+X_flat shape:       (2860299, 48)  # (samples, features)
+y_reg_flat shape:   (2860299, 4)  # (samples, 4)
+y_class_flat shape: (2860299,)  # (samples,)  [binary PM2.5]
+y_aqi_flat shape:   (2860299,)  # (samples,)  [multi-class AQI]
+
+Number of samples:  2860299
+Number of features: 48
+Regression targets: [np.str_('eac4:pm2p5'), np.str_('eac4:pm10'), np.str_('eac4:go3'), np.str_('eac4:no2')]
+PM2.5 threshold for binary classification: 25.0 µg/m³
+
+Dates (unique over all samples):
+  count days: 3653
+  range: 2015-01-01  -->  2024-12-31
+
+First 10 feature names:
+  - eac4:u10
+  - eac4:v10
+  - eac4:d2m
+  - eac4:t2m
+  - eac4:lsm
+  - eac4:pm1
+  - eac4:z
+  - eac4:sp
+  - eac4:co
+  - eac4:aermr04
+  ... (total 48 features)
+
+Binary PM2.5 classification stats (flat, all samples):
+  total samples: 2860299
+  polluted=1:    1774469 (0.6204)
+  clean=0:       1085830 (0.3796)
+
+AQI class distribution (flat, all samples):
+  class 0 (good): 442140 (0.1546)
+  class 1 (moderate): 605172 (0.2116)
+  class 2 (unhealthy): 749552 (0.2621)
+  class 3 (very_unhealthy_or_worse): 1063435 (0.3718)
+
+Coordinate sanity (flat):
+  lat_flat range: 18.000 .. 37.500
+  lon_flat range: -9.000 .. 12.000

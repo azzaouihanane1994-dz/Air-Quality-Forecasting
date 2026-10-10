@@ -1,0 +1,18 @@
+-r requirements.txt
+xarray
+netCDF4
+cfgrib
+eccodes
+scipy
+geopandas
+shapely
+fiona
+pyogrio
+cartopy
+cdsapi
+earthaccess
+boto3
+requests
+tqdm
+python-dateutil
+pystac-client

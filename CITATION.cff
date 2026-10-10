@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite this repository and the accompanying article when using this work."
+title: "Wind-Conditioned Neural Operators for Gridded Air-Quality Forecasting"
+type: software
+authors:
+  - family-names: Azzaoui
+    given-names: Hanane
+  - family-names: Khaldi
+    given-names: Yacine
+  - family-names: Benamor
+    given-names: Malak
+  - family-names: Benali
+    given-names: Belkis
+  - family-names: Bouhamed
+    given-names: Mohammed Mounir
+repository-code: "https://github.com/azzaouihanane1994-dz/Air-Quality-Forecasting"
+license: MIT

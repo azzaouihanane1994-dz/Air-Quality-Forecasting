@@ -1,0 +1,161 @@
+{
+  "config": {
+    "train_end_year": 2022,
+    "val_year": 2023,
+    "test_year": 2024,
+    "history": 7,
+    "horizon": 1,
+    "batch_size": 64,
+    "num_epochs": 3,
+    "lr": 0.001,
+    "weight_decay": 1e-05,
+    "grad_clip": 1.0,
+    "seed": 42,
+    "max_norm_clip": 10.0,
+    "run_training": false
+  },
+  "last_requested_model": "windno",
+  "dataset": {
+    "path": "datasets\\global_airpollution_2015_2024_4d.npz",
+    "shape_X": [
+      3653,
+      48,
+      27,
+      29
+    ],
+    "shape_y_reg": [
+      3653,
+      4,
+      27,
+      29
+    ],
+    "date_range": [
+      "2015-01-01",
+      "2024-12-31"
+    ],
+    "target_names": [
+      "eac4:pm2p5",
+      "eac4:pm10",
+      "eac4:go3",
+      "eac4:no2"
+    ],
+    "pm25_threshold_ugm3": 25.0,
+    "aqi_class_names": [
+      "good",
+      "moderate",
+      "unhealthy",
+      "very_unhealthy_or_worse"
+    ],
+    "aqi_bounds_ugm3": {
+      "pm25": [
+        15.0,
+        25.0,
+        50.0
+      ],
+      "pm10": [
+        30.0,
+        50.0,
+        100.0
+      ],
+      "go3": [
+        80.0,
+        120.0,
+        180.0
+      ],
+      "no2": [
+        20.0,
+        40.0,
+        80.0
+      ]
+    }
+  },
+  "split_counts": {
+    "train": 2915,
+    "val": 365,
+    "test": 366
+  },
+  "written_outputs": [
+    "categorical_baseline_comparison.csv",
+    "categorical_comparison.csv",
+    "categorical_comparison_agg.csv",
+    "class_frequencies_by_split.csv",
+    "convlstm_seed42_best.pt",
+    "convlstm_seed42_classification.csv",
+    "convlstm_seed42_normalization.json",
+    "convlstm_seed42_regression_ugm3.csv",
+    "convlstm_seed42_val_history.csv",
+    "convlstm_seed43_best.pt",
+    "convlstm_seed43_classification.csv",
+    "convlstm_seed43_normalization.json",
+    "convlstm_seed43_regression_ugm3.csv",
+    "convlstm_seed43_val_history.csv",
+    "convlstm_seed44_best.pt",
+    "convlstm_seed44_classification.csv",
+    "convlstm_seed44_normalization.json",
+    "convlstm_seed44_regression_ugm3.csv",
+    "convlstm_seed44_val_history.csv",
+    "deterministic_baseline_classification.csv",
+    "deterministic_baseline_regression_ugm3.csv",
+    "event_diagnostics_agg.csv",
+    "event_diagnostics_raw.csv",
+    "feature_inventory.csv",
+    "learned_model_classification_seed_summary_agg.csv",
+    "learned_model_classification_seed_summary_raw.csv",
+    "learned_model_regression_seed_summary_agg.csv",
+    "learned_model_regression_seed_summary_raw.csv",
+    "reference_windno_categorical_metrics.csv",
+    "reference_windno_regression_unit_audit.csv",
+    "plain_fno_seed42_best.pt",
+    "plain_fno_seed42_classification.csv",
+    "plain_fno_seed42_normalization.json",
+    "plain_fno_seed42_regression_ugm3.csv",
+    "plain_fno_seed42_val_history.csv",
+    "plain_fno_seed43_best.pt",
+    "plain_fno_seed43_classification.csv",
+    "plain_fno_seed43_normalization.json",
+    "plain_fno_seed43_regression_ugm3.csv",
+    "plain_fno_seed43_val_history.csv",
+    "plain_fno_seed44_best.pt",
+    "plain_fno_seed44_classification.csv",
+    "plain_fno_seed44_normalization.json",
+    "plain_fno_seed44_regression_ugm3.csv",
+    "plain_fno_seed44_val_history.csv",
+    "regression_comparison_ugm3.csv",
+    "regression_comparison_ugm3_agg.csv",
+    "experiment_summary.json",
+    "unet_seed42_best.pt",
+    "unet_seed42_classification.csv",
+    "unet_seed42_normalization.json",
+    "unet_seed42_regression_ugm3.csv",
+    "unet_seed42_val_history.csv",
+    "unet_seed43_best.pt",
+    "unet_seed43_classification.csv",
+    "unet_seed43_normalization.json",
+    "unet_seed43_regression_ugm3.csv",
+    "unet_seed43_val_history.csv",
+    "unet_seed44_best.pt",
+    "unet_seed44_classification.csv",
+    "unet_seed44_normalization.json",
+    "unet_seed44_regression_ugm3.csv",
+    "unet_seed44_val_history.csv",
+    "windno_classification_seed_summary_agg.csv",
+    "windno_classification_seed_summary_raw.csv",
+    "windno_regression_seed_summary_agg.csv",
+    "windno_regression_seed_summary_raw.csv",
+    "windno_seed42_best.pt",
+    "windno_seed42_classification.csv",
+    "windno_seed42_normalization.json",
+    "windno_seed42_regression_ugm3.csv",
+    "windno_seed42_val_history.csv",
+    "windno_seed43_best.pt",
+    "windno_seed43_classification.csv",
+    "windno_seed43_normalization.json",
+    "windno_seed43_regression_ugm3.csv",
+    "windno_seed43_val_history.csv",
+    "windno_seed44_best.pt",
+    "windno_seed44_classification.csv",
+    "windno_seed44_normalization.json",
+    "windno_seed44_regression_ugm3.csv",
+    "windno_seed44_val_history.csv"
+  ]
+}

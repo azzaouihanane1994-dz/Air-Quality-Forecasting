@@ -1,0 +1,138 @@
+[
+  {
+    "variant": "baseline",
+    "variant_spec": {
+      "use_advection": true,
+      "use_fno": true,
+      "wind_gating_only": false,
+      "adv_scale": 0.15
+    },
+    "ckpt_path": "ML_3\\windno_2_no_diffusion_suite\\baseline\\checkpoints\\baseline_best.pt",
+    "log_dir": "ML_3\\windno_2_no_diffusion_suite\\baseline\\logs",
+    "plot_dir": "ML_3\\windno_2_no_diffusion_suite\\baseline\\results",
+    "metrics": {
+      "variant": "baseline",
+      "reg_mae": {
+        "eac4:pm2p5": 0.005491936579346657,
+        "eac4:pm10": 0.010331622324883938,
+        "eac4:go3": 0.007949907332658768,
+        "eac4:no2": 0.006457024719566107
+      },
+      "reg_rmse": {
+        "eac4:pm2p5": 0.007140583824366331,
+        "eac4:pm10": 0.013313029892742634,
+        "eac4:go3": 0.010398749262094498,
+        "eac4:no2": 0.008396510034799576
+      },
+      "reg_rmse_mean": 0.009812218137085438,
+      "bin_acc": 0.8099191145168156,
+      "bin_prec": 0.829915076898072,
+      "bin_rec": 0.8861825656378299,
+      "bin_f1": 0.8571263707585498,
+      "aqi_acc": 0.5520800619726567,
+      "aqi_macro_f1": 0.5149114510482682
+    }
+  },
+  {
+    "variant": "no_advection",
+    "variant_spec": {
+      "use_advection": false,
+      "use_fno": true,
+      "wind_gating_only": false,
+      "adv_scale": 0.0
+    },
+    "ckpt_path": "ML_3\\windno_2_no_diffusion_suite\\no_advection\\checkpoints\\no_advection_best.pt",
+    "log_dir": "ML_3\\windno_2_no_diffusion_suite\\no_advection\\logs",
+    "plot_dir": "ML_3\\windno_2_no_diffusion_suite\\no_advection\\results",
+    "metrics": {
+      "variant": "no_advection",
+      "reg_mae": {
+        "eac4:pm2p5": 0.001704154652543366,
+        "eac4:pm10": 0.0025938628241419792,
+        "eac4:go3": 0.002932183677330613,
+        "eac4:no2": 0.0017810314893722534
+      },
+      "reg_rmse": {
+        "eac4:pm2p5": 0.0022586374543607235,
+        "eac4:pm10": 0.003288354491814971,
+        "eac4:go3": 0.003628125647082925,
+        "eac4:no2": 0.002251622499898076
+      },
+      "reg_rmse_mean": 0.002856684848666191,
+      "bin_acc": 0.7771252503681371,
+      "bin_prec": 0.7919040421656397,
+      "bin_rec": 0.8865676336755558,
+      "bin_f1": 0.8365663869889741,
+      "aqi_acc": 0.4816419962453503,
+      "aqi_macro_f1": 0.4263743480700569
+    }
+  },
+  {
+    "variant": "no_fno_1x1",
+    "variant_spec": {
+      "use_advection": true,
+      "use_fno": false,
+      "wind_gating_only": false,
+      "adv_scale": 0.15
+    },
+    "ckpt_path": "ML_3\\windno_2_no_diffusion_suite\\no_fno_1x1\\checkpoints\\no_fno_1x1_best.pt",
+    "log_dir": "ML_3\\windno_2_no_diffusion_suite\\no_fno_1x1\\logs",
+    "plot_dir": "ML_3\\windno_2_no_diffusion_suite\\no_fno_1x1\\results",
+    "metrics": {
+      "variant": "no_fno_1x1",
+      "reg_mae": {
+        "eac4:pm2p5": 0.01506453100591898,
+        "eac4:pm10": 0.005213337484747171,
+        "eac4:go3": 0.009418646804988384,
+        "eac4:no2": 0.010546576231718063
+      },
+      "reg_rmse": {
+        "eac4:pm2p5": 0.01695815846323967,
+        "eac4:pm10": 0.008079922758042812,
+        "eac4:go3": 0.011179418303072453,
+        "eac4:no2": 0.011791936121881008
+      },
+      "reg_rmse_mean": 0.01200235914438963,
+      "bin_acc": 0.7191968678684337,
+      "bin_prec": 0.7185713384236764,
+      "bin_rec": 0.9263760758855208,
+      "bin_f1": 0.8093478137260476,
+      "aqi_acc": 0.4365827104662605,
+      "aqi_macro_f1": 0.3386916499460082
+    }
+  },
+  {
+    "variant": "wind_gating_only",
+    "variant_spec": {
+      "use_advection": true,
+      "use_fno": false,
+      "wind_gating_only": true,
+      "adv_scale": 0.15
+    },
+    "ckpt_path": "ML_3\\windno_2_no_diffusion_suite\\wind_gating_only\\checkpoints\\wind_gating_only_best.pt",
+    "log_dir": "ML_3\\windno_2_no_diffusion_suite\\wind_gating_only\\logs",
+    "plot_dir": "ML_3\\windno_2_no_diffusion_suite\\wind_gating_only\\results",
+    "metrics": {
+      "variant": "wind_gating_only",
+      "reg_mae": {
+        "eac4:pm2p5": 0.02716587670147419,
+        "eac4:pm10": 0.038320522755384445,
+        "eac4:go3": 0.041312504559755325,
+        "eac4:no2": 0.02748296968638897
+      },
+      "reg_rmse": {
+        "eac4:pm2p5": 0.035583168268203735,
+        "eac4:pm10": 0.0555751696228981,
+        "eac4:go3": 0.06279771775007248,
+        "eac4:no2": 0.04077570140361786
+      },
+      "reg_rmse_mean": 0.048682939261198044,
+      "bin_acc": 0.7073327331476945,
+      "bin_prec": 0.6993957284388527,
+      "bin_rec": 0.9560263147904091,
+      "bin_f1": 0.8078190375370627,
+      "aqi_acc": 0.4198263648989106,
+      "aqi_macro_f1": 0.2874558369671786
+    }
+  }
+]

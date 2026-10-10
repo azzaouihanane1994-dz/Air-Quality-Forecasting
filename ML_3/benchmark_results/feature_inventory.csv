@@ -1,0 +1,49 @@
+index,feature,source_group
+0,eac4:u10,CAMS/EAC4 and emissions merge
+1,eac4:v10,CAMS/EAC4 and emissions merge
+2,eac4:d2m,CAMS/EAC4 and emissions merge
+3,eac4:t2m,CAMS/EAC4 and emissions merge
+4,eac4:lsm,CAMS/EAC4 and emissions merge
+5,eac4:pm1,CAMS/EAC4 and emissions merge
+6,eac4:z,CAMS/EAC4 and emissions merge
+7,eac4:sp,CAMS/EAC4 and emissions merge
+8,eac4:co,CAMS/EAC4 and emissions merge
+9,eac4:aermr04,CAMS/EAC4 and emissions merge
+10,eac4:aermr05,CAMS/EAC4 and emissions merge
+11,eac4:aermr06,CAMS/EAC4 and emissions merge
+12,eac4:hcho,CAMS/EAC4 and emissions merge
+13,eac4:aermr09,CAMS/EAC4 and emissions merge
+14,eac4:aermr07,CAMS/EAC4 and emissions merge
+15,eac4:aermr10,CAMS/EAC4 and emissions merge
+16,eac4:c5h8,CAMS/EAC4 and emissions merge
+17,eac4:no,CAMS/EAC4 and emissions merge
+18,eac4:so2,CAMS/EAC4 and emissions merge
+19,eac4:t,CAMS/EAC4 and emissions merge
+20,eac4:nh3,CAMS/EAC4 and emissions merge
+21,eac4:nh4,CAMS/EAC4 and emissions merge
+22,eac4:no3_a,CAMS/EAC4 and emissions merge
+23,emis:ammonia,Merged predictor
+24,emis:black-carbon,Merged predictor
+25,emis:carbon-monoxide,Merged predictor
+26,emis:isoprene,Merged predictor
+27,emis:methane,Merged predictor
+28,emis:monoterpenes,Merged predictor
+29,emis:nitrogen-oxides,Merged predictor
+30,emis:organic-carbon,Merged predictor
+31,emis:sulphur-dioxide,Merged predictor
+32,u100,ERA5
+33,v100,ERA5
+34,tcc,ERA5
+35,blh,ERA5
+36,skt,ERA5
+37,ws100,ERA5
+38,vent100,ERA5
+39,fire_label,NASA FIRMS
+40,fire_frp,NASA FIRMS
+41,static:roads_major_km_per_km2,HOTOSM static covariate
+42,static:roads_secondary_km_per_km2,HOTOSM static covariate
+43,static:roads_local_km_per_km2,HOTOSM static covariate
+44,static:building_area_m2,HOTOSM static covariate
+45,static:places:city,HOTOSM static covariate
+46,static:places:town,HOTOSM static covariate
+47,static:places:village,HOTOSM static covariate

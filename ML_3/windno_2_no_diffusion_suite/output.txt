@@ -1,0 +1,197 @@
+Device: cuda
+Cartopy available: False
+
+==========================================================================================
+Running: baseline | spec: VariantSpec(use_advection=True, use_fno=True, wind_gating_only=False, adv_scale=0.15)
+==========================================================================================
+
+[baseline] wind indices: {'u10': np.str_('eac4:u10'), 'v10': np.str_('eac4:v10'), 'u100': np.str_('u100'), 'v100': np.str_('v100')}
+[baseline] Epoch 001 | Train Loss=0.9284 (reg=0.0108, bin=0.4990, aqi=0.4186) | Test Loss=0.8331 (reg=0.0019, bin=0.4599, aqi=0.3939) | AQI macro-F1=0.468
+[baseline] Epoch 002 | Train Loss=0.8603 (reg=0.0015, bin=0.4648, aqi=0.3940) | Test Loss=0.7959 (reg=0.0011, bin=0.4481, aqi=0.3917) | AQI macro-F1=0.444
+[baseline] Epoch 003 | Train Loss=0.8271 (reg=0.0006, bin=0.4460, aqi=0.3805) | Test Loss=0.7508 (reg=0.0003, bin=0.4407, aqi=0.3778) | AQI macro-F1=0.495
+[baseline] Epoch 004 | Train Loss=0.8238 (reg=0.0004, bin=0.4450, aqi=0.3784) | Test Loss=0.7161 (reg=0.0002, bin=0.4356, aqi=0.3711) | AQI macro-F1=0.497
+[baseline] Epoch 005 | Train Loss=0.7920 (reg=0.0002, bin=0.4271, aqi=0.3646) | Test Loss=0.6859 (reg=0.0001, bin=0.4310, aqi=0.3684) | AQI macro-F1=0.497
+[baseline] Epoch 006 | Train Loss=0.7724 (reg=0.0001, bin=0.4160, aqi=0.3563) | Test Loss=0.6576 (reg=0.0001, bin=0.4271, aqi=0.3668) | AQI macro-F1=0.497
+[baseline] Epoch 007 | Train Loss=0.7527 (reg=0.0001, bin=0.4041, aqi=0.3486) | Test Loss=0.6373 (reg=0.0001, bin=0.4307, aqi=0.3651) | AQI macro-F1=0.507
+[baseline] Epoch 008 | Train Loss=0.7296 (reg=0.0001, bin=0.3895, aqi=0.3400) | Test Loss=0.6307 (reg=0.0001, bin=0.4343, aqi=0.3760) | AQI macro-F1=0.492
+[baseline] Epoch 009 | Train Loss=0.7046 (reg=0.0001, bin=0.3737, aqi=0.3309) | Test Loss=0.6106 (reg=0.0000, bin=0.4396, aqi=0.3725) | AQI macro-F1=0.506
+[baseline] Epoch 010 | Train Loss=0.6672 (reg=0.0000, bin=0.3495, aqi=0.3177) | Test Loss=0.6067 (reg=0.0000, bin=0.4503, aqi=0.3782) | AQI macro-F1=0.509
+[baseline] Epoch 011 | Train Loss=0.6599 (reg=0.0000, bin=0.3440, aqi=0.3159) | Test Loss=0.6429 (reg=0.0000, bin=0.4786, aqi=0.4015) | AQI macro-F1=0.502
+[baseline] Epoch 012 | Train Loss=0.6006 (reg=0.0000, bin=0.3052, aqi=0.2954) | Test Loss=0.6489 (reg=0.0000, bin=0.4945, aqi=0.4096) | AQI macro-F1=0.494
+[baseline] epoch=013 unstable (bad_batches=4, tr_n=464). Stopping early.
+[baseline] Best checkpoint: ML_3\windno_2_no_diffusion_suite\baseline\checkpoints\baseline_best.pt | best_epoch= 10
+f:\_My Work\Air Pollution PEM\ExperimentalWork\ML_3\WindNO_2_ablations.py:949: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  obj = torch.load(ckpt_path, map_location=device)
+[baseline] Test predictions saved to: ML_3\windno_2_no_diffusion_suite\baseline\results\test_predictions_grid.npz
+
+[baseline test metrics]
+  Regression MAE: {np.str_('eac4:pm2p5'): np.float32(0.0026451137), np.str_('eac4:pm10'): np.float32(0.004543932), np.str_('eac4:go3'): np.float32(0.005192163), np.str_('eac4:no2'): np.float32(0.0023463322)}
+  Regression RMSE: {np.str_('eac4:pm2p5'): np.float32(0.003519032), np.str_('eac4:pm10'): np.float32(0.00604997), np.str_('eac4:go3'): np.float32(0.0067881034), np.str_('eac4:no2'): np.float32(0.0031369433)}
+  Binary PM2.5: acc=0.803, prec=0.826, rec=0.880, f1=0.852
+  AQI: acc=0.538, macro-F1=0.509
+[Multi-horizon][oracle] shared anchors n=337 horizons=[1, 3, 7, 14, 30]
+[Multi-horizon][oracle] h=1: n=337 | binF1=0.852 | AQI macroF1=0.499
+[Multi-horizon][oracle] h=3: n=337 | binF1=0.852 | AQI macroF1=0.499
+[Multi-horizon][oracle] h=7: n=337 | binF1=0.853 | AQI macroF1=0.498
+[Multi-horizon][oracle] h=14: n=337 | binF1=0.854 | AQI macroF1=0.498
+[Multi-horizon][oracle] h=30: n=337 | binF1=0.855 | AQI macroF1=0.503
+[Multi-horizon][persist] shared anchors n=337 horizons=[1, 3, 7, 14, 30]
+[Multi-horizon][persist] h=1: n=337 | binF1=0.852 | AQI macroF1=0.499
+[Multi-horizon][persist] h=3: n=337 | binF1=0.832 | AQI macroF1=0.457
+[Multi-horizon][persist] h=7: n=337 | binF1=0.820 | AQI macroF1=0.435
+[Multi-horizon][persist] h=14: n=337 | binF1=0.823 | AQI macroF1=0.428
+[Multi-horizon][persist] h=30: n=337 | binF1=0.813 | AQI macroF1=0.414
+[baseline] Multi-horizon artifacts saved to: ML_3\windno_2_no_diffusion_suite\baseline\results
+
+==========================================================================================
+Running: no_advection | spec: VariantSpec(use_advection=False, use_fno=True, wind_gating_only=False, adv_scale=0.0)
+==========================================================================================
+
+[no_advection] wind indices: {'u10': np.str_('eac4:u10'), 'v10': np.str_('eac4:v10'), 'u100': np.str_('u100'), 'v100': np.str_('v100')}
+[no_advection] Epoch 001 | Train Loss=0.9462 (reg=0.0100, bin=0.5119, aqi=0.4244) | Test Loss=0.8745 (reg=0.0002, bin=0.4883, aqi=0.4079) | AQI macro-F1=0.424
+[no_advection] Epoch 002 | Train Loss=0.9093 (reg=0.0003, bin=0.4953, aqi=0.4138) | Test Loss=0.8518 (reg=0.0002, bin=0.4882, aqi=0.4070) | AQI macro-F1=0.410
+[no_advection] Epoch 003 | Train Loss=0.9078 (reg=0.0001, bin=0.4944, aqi=0.4132) | Test Loss=0.8334 (reg=0.0001, bin=0.4885, aqi=0.4097) | AQI macro-F1=0.416
+[no_advection] Epoch 004 | Train Loss=0.9073 (reg=0.0001, bin=0.4941, aqi=0.4131) | Test Loss=0.8225 (reg=0.0001, bin=0.4940, aqi=0.4140) | AQI macro-F1=0.381
+[no_advection] Epoch 005 | Train Loss=0.9070 (reg=0.0000, bin=0.4940, aqi=0.4130) | Test Loss=0.7916 (reg=0.0000, bin=0.4900, aqi=0.4085) | AQI macro-F1=0.415
+[no_advection] Epoch 006 | Train Loss=0.9074 (reg=0.0001, bin=0.4943, aqi=0.4130) | Test Loss=0.7745 (reg=0.0000, bin=0.4912, aqi=0.4107) | AQI macro-F1=0.418
+[no_advection] Epoch 007 | Train Loss=0.9067 (reg=0.0000, bin=0.4938, aqi=0.4128) | Test Loss=0.7490 (reg=0.0001, bin=0.4887, aqi=0.4088) | AQI macro-F1=0.412
+[no_advection] Epoch 008 | Train Loss=0.9063 (reg=0.0001, bin=0.4936, aqi=0.4127) | Test Loss=0.7327 (reg=0.0000, bin=0.4895, aqi=0.4120) | AQI macro-F1=0.392
+[no_advection] Epoch 009 | Train Loss=0.9066 (reg=0.0000, bin=0.4938, aqi=0.4127) | Test Loss=0.7136 (reg=0.0000, bin=0.4909, aqi=0.4117) | AQI macro-F1=0.399
+[no_advection] Epoch 010 | Train Loss=0.9061 (reg=0.0000, bin=0.4935, aqi=0.4125) | Test Loss=0.6929 (reg=0.0000, bin=0.4904, aqi=0.4117) | AQI macro-F1=0.397
+[no_advection] Epoch 011 | Train Loss=0.9064 (reg=0.0000, bin=0.4935, aqi=0.4128) | Test Loss=0.6759 (reg=0.0000, bin=0.4915, aqi=0.4134) | AQI macro-F1=0.397
+[no_advection] Epoch 012 | Train Loss=0.9066 (reg=0.0000, bin=0.4938, aqi=0.4128) | Test Loss=0.6535 (reg=0.0000, bin=0.4902, aqi=0.4126) | AQI macro-F1=0.393
+[no_advection] Epoch 013 | Train Loss=0.9064 (reg=0.0000, bin=0.4937, aqi=0.4127) | Test Loss=0.6307 (reg=0.0000, bin=0.4905, aqi=0.4098) | AQI macro-F1=0.414
+[no_advection] Epoch 014 | Train Loss=0.9059 (reg=0.0000, bin=0.4934, aqi=0.4124) | Test Loss=0.6130 (reg=0.0000, bin=0.4900, aqi=0.4121) | AQI macro-F1=0.397
+[no_advection] Epoch 015 | Train Loss=0.9055 (reg=0.0000, bin=0.4931, aqi=0.4124) | Test Loss=0.5880 (reg=0.0000, bin=0.4889, aqi=0.4086) | AQI macro-F1=0.413
+[no_advection] Epoch 016 | Train Loss=0.9061 (reg=0.0000, bin=0.4935, aqi=0.4126) | Test Loss=0.5706 (reg=0.0000, bin=0.4896, aqi=0.4097) | AQI macro-F1=0.411
+[no_advection] Epoch 017 | Train Loss=0.9058 (reg=0.0000, bin=0.4934, aqi=0.4123) | Test Loss=0.5483 (reg=0.0000, bin=0.4891, aqi=0.4078) | AQI macro-F1=0.426
+[no_advection] Epoch 018 | Train Loss=0.9058 (reg=0.0000, bin=0.4934, aqi=0.4124) | Test Loss=0.5275 (reg=0.0000, bin=0.4881, aqi=0.4075) | AQI macro-F1=0.406
+[no_advection] Epoch 019 | Train Loss=0.9063 (reg=0.0000, bin=0.4936, aqi=0.4126) | Test Loss=0.5135 (reg=0.0000, bin=0.4898, aqi=0.4102) | AQI macro-F1=0.385
+[no_advection] Epoch 020 | Train Loss=0.9056 (reg=0.0000, bin=0.4933, aqi=0.4123) | Test Loss=0.4933 (reg=0.0000, bin=0.4897, aqi=0.4094) | AQI macro-F1=0.412
+[no_advection] Best checkpoint: ML_3\windno_2_no_diffusion_suite\no_advection\checkpoints\no_advection_best.pt | best_epoch= 17
+f:\_My Work\Air Pollution PEM\ExperimentalWork\ML_3\WindNO_2_ablations.py:949: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  obj = torch.load(ckpt_path, map_location=device)
+[no_advection] Test predictions saved to: ML_3\windno_2_no_diffusion_suite\no_advection\results\test_predictions_grid.npz
+
+[no_advection test metrics]
+  Regression MAE: {np.str_('eac4:pm2p5'): np.float32(0.0017041547), np.str_('eac4:pm10'): np.float32(0.0025938628), np.str_('eac4:go3'): np.float32(0.0029321837), np.str_('eac4:no2'): np.float32(0.0017810315)}
+  Regression RMSE: {np.str_('eac4:pm2p5'): np.float32(0.0022586375), np.str_('eac4:pm10'): np.float32(0.0032883545), np.str_('eac4:go3'): np.float32(0.0036281256), np.str_('eac4:no2'): np.float32(0.0022516225)}
+  Binary PM2.5: acc=0.777, prec=0.792, rec=0.887, f1=0.837
+  AQI: acc=0.482, macro-F1=0.426
+[Multi-horizon][oracle] shared anchors n=337 horizons=[1, 3, 7, 14, 30]
+[Multi-horizon][oracle] h=1: n=337 | binF1=0.837 | AQI macroF1=0.418
+[Multi-horizon][oracle] h=3: n=337 | binF1=0.837 | AQI macroF1=0.418
+[Multi-horizon][oracle] h=7: n=337 | binF1=0.838 | AQI macroF1=0.420
+[Multi-horizon][oracle] h=14: n=337 | binF1=0.839 | AQI macroF1=0.421
+[Multi-horizon][oracle] h=30: n=337 | binF1=0.838 | AQI macroF1=0.422
+[Multi-horizon][persist] shared anchors n=337 horizons=[1, 3, 7, 14, 30]
+[Multi-horizon][persist] h=1: n=337 | binF1=0.837 | AQI macroF1=0.418
+[Multi-horizon][persist] h=3: n=337 | binF1=0.837 | AQI macroF1=0.418
+[Multi-horizon][persist] h=7: n=337 | binF1=0.838 | AQI macroF1=0.420
+[Multi-horizon][persist] h=14: n=337 | binF1=0.839 | AQI macroF1=0.421
+[Multi-horizon][persist] h=30: n=337 | binF1=0.838 | AQI macroF1=0.422
+[no_advection] Multi-horizon artifacts saved to: ML_3\windno_2_no_diffusion_suite\no_advection\results
+
+==========================================================================================
+Running: no_fno_1x1 | spec: VariantSpec(use_advection=True, use_fno=False, wind_gating_only=False, adv_scale=0.15)
+==========================================================================================
+
+[no_fno_1x1] wind indices: {'u10': np.str_('eac4:u10'), 'v10': np.str_('eac4:v10'), 'u100': np.str_('u100'), 'v100': np.str_('v100')}
+[no_fno_1x1] Epoch 001 | Train Loss=1.0776 (reg=0.0071, bin=0.6101, aqi=0.4604) | Test Loss=1.0140 (reg=0.0008, bin=0.5854, aqi=0.4481) | AQI macro-F1=0.266
+[no_fno_1x1] Epoch 002 | Train Loss=1.0559 (reg=0.0007, bin=0.6008, aqi=0.4544) | Test Loss=0.9947 (reg=0.0004, bin=0.5889, aqi=0.4459) | AQI macro-F1=0.306
+[no_fno_1x1] Epoch 003 | Train Loss=1.0596 (reg=0.0006, bin=0.6036, aqi=0.4554) | Test Loss=0.9956 (reg=0.0004, bin=0.6026, aqi=0.4522) | AQI macro-F1=0.236
+[no_fno_1x1] Epoch 004 | Train Loss=1.0680 (reg=0.0005, bin=0.6121, aqi=0.4555) | Test Loss=0.9520 (reg=0.0006, bin=0.5899, aqi=0.4413) | AQI macro-F1=0.277
+[no_fno_1x1] Epoch 005 | Train Loss=1.0577 (reg=0.0003, bin=0.6067, aqi=0.4507) | Test Loss=0.9307 (reg=0.0002, bin=0.5883, aqi=0.4416) | AQI macro-F1=0.286
+[no_fno_1x1] Epoch 006 | Train Loss=1.0553 (reg=0.0002, bin=0.6052, aqi=0.4499) | Test Loss=0.9196 (reg=0.0002, bin=0.5928, aqi=0.4449) | AQI macro-F1=0.309
+[no_fno_1x1] Epoch 007 | Train Loss=1.0592 (reg=0.0003, bin=0.6071, aqi=0.4518) | Test Loss=0.8845 (reg=0.0002, bin=0.5836, aqi=0.4393) | AQI macro-F1=0.309
+[no_fno_1x1] Epoch 008 | Train Loss=1.0432 (reg=0.0001, bin=0.5977, aqi=0.4454) | Test Loss=0.8591 (reg=0.0001, bin=0.5810, aqi=0.4362) | AQI macro-F1=0.330
+[no_fno_1x1] Epoch 009 | Train Loss=1.0419 (reg=0.0001, bin=0.5970, aqi=0.4449) | Test Loss=0.8410 (reg=0.0000, bin=0.5810, aqi=0.4373) | AQI macro-F1=0.334
+[no_fno_1x1] Epoch 010 | Train Loss=1.0398 (reg=0.0000, bin=0.5957, aqi=0.4440) | Test Loss=0.8158 (reg=0.0000, bin=0.5783, aqi=0.4344) | AQI macro-F1=0.321
+[no_fno_1x1] Epoch 011 | Train Loss=1.0387 (reg=0.0000, bin=0.5949, aqi=0.4437) | Test Loss=0.7983 (reg=0.0000, bin=0.5784, aqi=0.4356) | AQI macro-F1=0.324
+[no_fno_1x1] Epoch 012 | Train Loss=1.0386 (reg=0.0000, bin=0.5951, aqi=0.4435) | Test Loss=0.7832 (reg=0.0000, bin=0.5802, aqi=0.4370) | AQI macro-F1=0.311
+[no_fno_1x1] Epoch 013 | Train Loss=1.0374 (reg=0.0000, bin=0.5943, aqi=0.4430) | Test Loss=0.7661 (reg=0.0000, bin=0.5806, aqi=0.4380) | AQI macro-F1=0.337
+[no_fno_1x1] Epoch 014 | Train Loss=1.0392 (reg=0.0000, bin=0.5956, aqi=0.4436) | Test Loss=0.7482 (reg=0.0000, bin=0.5809, aqi=0.4380) | AQI macro-F1=0.306
+[no_fno_1x1] Epoch 015 | Train Loss=1.0375 (reg=0.0000, bin=0.5946, aqi=0.4429) | Test Loss=0.7285 (reg=0.0000, bin=0.5803, aqi=0.4374) | AQI macro-F1=0.321
+[no_fno_1x1] Epoch 016 | Train Loss=1.0371 (reg=0.0000, bin=0.5943, aqi=0.4428) | Test Loss=0.7079 (reg=0.0000, bin=0.5802, aqi=0.4354) | AQI macro-F1=0.334
+[no_fno_1x1] Epoch 017 | Train Loss=1.0369 (reg=0.0000, bin=0.5941, aqi=0.4427) | Test Loss=0.6916 (reg=0.0000, bin=0.5818, aqi=0.4353) | AQI macro-F1=0.334
+[no_fno_1x1] Epoch 018 | Train Loss=1.0360 (reg=0.0000, bin=0.5936, aqi=0.4424) | Test Loss=0.6708 (reg=0.0000, bin=0.5783, aqi=0.4363) | AQI macro-F1=0.336
+[no_fno_1x1] Epoch 019 | Train Loss=1.0354 (reg=0.0000, bin=0.5933, aqi=0.4421) | Test Loss=0.6620 (reg=0.0000, bin=0.5820, aqi=0.4400) | AQI macro-F1=0.345
+[no_fno_1x1] Epoch 020 | Train Loss=1.0343 (reg=0.0000, bin=0.5924, aqi=0.4419) | Test Loss=0.6453 (reg=0.0000, bin=0.5832, aqi=0.4396) | AQI macro-F1=0.333
+[no_fno_1x1] Best checkpoint: ML_3\windno_2_no_diffusion_suite\no_fno_1x1\checkpoints\no_fno_1x1_best.pt | best_epoch= 19
+f:\_My Work\Air Pollution PEM\ExperimentalWork\ML_3\WindNO_2_ablations.py:949: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  obj = torch.load(ckpt_path, map_location=device)
+[no_fno_1x1] Test predictions saved to: ML_3\windno_2_no_diffusion_suite\no_fno_1x1\results\test_predictions_grid.npz
+
+[no_fno_1x1 test metrics]
+  Regression MAE: {np.str_('eac4:pm2p5'): np.float32(0.0010030944), np.str_('eac4:pm10'): np.float32(0.0011099697), np.str_('eac4:go3'): np.float32(0.0011477307), np.str_('eac4:no2'): np.float32(0.0011590536)}
+  Regression RMSE: {np.str_('eac4:pm2p5'): np.float32(0.0015027333), np.str_('eac4:pm10'): np.float32(0.0017239028), np.str_('eac4:go3'): np.float32(0.0021357955), np.str_('eac4:no2'): np.float32(0.0020313966)}
+  Binary PM2.5: acc=0.716, prec=0.710, rec=0.946, f1=0.811
+  AQI: acc=0.404, macro-F1=0.345
+[Multi-horizon][oracle] shared anchors n=337 horizons=[1, 3, 7, 14, 30]
+[Multi-horizon][oracle] h=1: n=337 | binF1=0.816 | AQI macroF1=0.344
+[Multi-horizon][oracle] h=3: n=337 | binF1=0.816 | AQI macroF1=0.343
+[Multi-horizon][oracle] h=7: n=337 | binF1=0.817 | AQI macroF1=0.342
+[Multi-horizon][oracle] h=14: n=337 | binF1=0.817 | AQI macroF1=0.342
+[Multi-horizon][oracle] h=30: n=337 | binF1=0.815 | AQI macroF1=0.343
+[Multi-horizon][persist] shared anchors n=337 horizons=[1, 3, 7, 14, 30]
+[Multi-horizon][persist] h=1: n=337 | binF1=0.816 | AQI macroF1=0.344
+[Multi-horizon][persist] h=3: n=337 | binF1=0.818 | AQI macroF1=0.341
+[Multi-horizon][persist] h=7: n=337 | binF1=0.818 | AQI macroF1=0.329
+[Multi-horizon][persist] h=14: n=337 | binF1=0.816 | AQI macroF1=0.319
+[Multi-horizon][persist] h=30: n=337 | binF1=0.814 | AQI macroF1=0.318
+[no_fno_1x1] Multi-horizon artifacts saved to: ML_3\windno_2_no_diffusion_suite\no_fno_1x1\results
+
+==========================================================================================
+Running: wind_gating_only | spec: VariantSpec(use_advection=True, use_fno=False, wind_gating_only=True, adv_scale=0.15)
+==========================================================================================
+
+[wind_gating_only] wind indices: {'u10': np.str_('eac4:u10'), 'v10': np.str_('eac4:v10'), 'u100': np.str_('u100'), 'v100': np.str_('v100')}
+[wind_gating_only] Epoch 001 | Train Loss=1.1270 (reg=0.0172, bin=0.6400, aqi=0.4699) | Test Loss=1.0248 (reg=0.0033, bin=0.5934, aqi=0.4484) | AQI macro-F1=0.298
+[wind_gating_only] Epoch 002 | Train Loss=1.0994 (reg=0.0105, bin=0.6245, aqi=0.4644) | Test Loss=1.0294 (reg=0.0008, bin=0.6121, aqi=0.4562) | AQI macro-F1=0.247
+[wind_gating_only] Epoch 003 | Train Loss=1.0793 (reg=0.0018, bin=0.6179, aqi=0.4596) | Test Loss=0.9766 (reg=0.0008, bin=0.5909, aqi=0.4454) | AQI macro-F1=0.243
+[wind_gating_only] Epoch 004 | Train Loss=1.0734 (reg=0.0004, bin=0.6152, aqi=0.4579) | Test Loss=0.9686 (reg=0.0002, bin=0.5990, aqi=0.4491) | AQI macro-F1=0.249
+[wind_gating_only] Epoch 005 | Train Loss=1.0662 (reg=0.0008, bin=0.6096, aqi=0.4558) | Test Loss=0.9478 (reg=0.0003, bin=0.5976, aqi=0.4491) | AQI macro-F1=0.251
+[wind_gating_only] Epoch 006 | Train Loss=1.0651 (reg=0.0009, bin=0.6084, aqi=0.4558) | Test Loss=0.9281 (reg=0.0006, bin=0.5972, aqi=0.4488) | AQI macro-F1=0.289
+[wind_gating_only] Epoch 007 | Train Loss=1.0714 (reg=0.0002, bin=0.6137, aqi=0.4575) | Test Loss=0.9087 (reg=0.0000, bin=0.5982, aqi=0.4481) | AQI macro-F1=0.248
+[wind_gating_only] Epoch 008 | Train Loss=1.0965 (reg=0.0001, bin=0.6336, aqi=0.4629) | Test Loss=0.9291 (reg=0.0001, bin=0.6231, aqi=0.4592) | AQI macro-F1=0.238
+[wind_gating_only] Epoch 009 | Train Loss=1.0927 (reg=0.0001, bin=0.6303, aqi=0.4623) | Test Loss=0.8919 (reg=0.0000, bin=0.6120, aqi=0.4529) | AQI macro-F1=0.227
+[wind_gating_only] Epoch 010 | Train Loss=1.0818 (reg=0.0001, bin=0.6222, aqi=0.4595) | Test Loss=0.8556 (reg=0.0000, bin=0.6021, aqi=0.4466) | AQI macro-F1=0.257
+[wind_gating_only] Epoch 011 | Train Loss=1.0730 (reg=0.0000, bin=0.6159, aqi=0.4571) | Test Loss=0.8393 (reg=0.0000, bin=0.5998, aqi=0.4508) | AQI macro-F1=0.275
+[wind_gating_only] Epoch 012 | Train Loss=1.0666 (reg=0.0000, bin=0.6112, aqi=0.4554) | Test Loss=0.8110 (reg=0.0000, bin=0.5947, aqi=0.4473) | AQI macro-F1=0.273
+[wind_gating_only] Epoch 013 | Train Loss=1.0633 (reg=0.0000, bin=0.6085, aqi=0.4547) | Test Loss=0.7916 (reg=0.0000, bin=0.5927, aqi=0.4482) | AQI macro-F1=0.295
+[wind_gating_only] Epoch 014 | Train Loss=1.0646 (reg=0.0000, bin=0.6092, aqi=0.4553) | Test Loss=0.7768 (reg=0.0000, bin=0.5938, aqi=0.4501) | AQI macro-F1=0.267
+[wind_gating_only] Epoch 015 | Train Loss=1.1002 (reg=0.0001, bin=0.6337, aqi=0.4665) | Test Loss=0.7976 (reg=0.0001, bin=0.6175, aqi=0.4595) | AQI macro-F1=0.230
+[wind_gating_only] Epoch 016 | Train Loss=1.1047 (reg=0.0001, bin=0.6382, aqi=0.4664) | Test Loss=0.7610 (reg=0.0000, bin=0.6092, aqi=0.4511) | AQI macro-F1=0.291
+[wind_gating_only] Epoch 017 | Train Loss=1.0943 (reg=0.0002, bin=0.6311, aqi=0.4630) | Test Loss=0.7744 (reg=0.0003, bin=0.6282, aqi=0.4578) | AQI macro-F1=0.272
+[wind_gating_only] Epoch 018 | Train Loss=1.0887 (reg=0.0001, bin=0.6268, aqi=0.4618) | Test Loss=0.7341 (reg=0.0000, bin=0.6127, aqi=0.4542) | AQI macro-F1=0.279
+[wind_gating_only] Epoch 019 | Train Loss=1.0765 (reg=0.0000, bin=0.6181, aqi=0.4583) | Test Loss=0.6934 (reg=0.0000, bin=0.5921, aqi=0.4552) | AQI macro-F1=0.284
+[wind_gating_only] Epoch 020 | Train Loss=1.0869 (reg=0.0000, bin=0.6256, aqi=0.4613) | Test Loss=0.7082 (reg=0.0000, bin=0.6173, aqi=0.4563) | AQI macro-F1=0.243
+[wind_gating_only] Best checkpoint: ML_3\windno_2_no_diffusion_suite\wind_gating_only\checkpoints\wind_gating_only_best.pt | best_epoch= 1
+f:\_My Work\Air Pollution PEM\ExperimentalWork\ML_3\WindNO_2_ablations.py:949: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  obj = torch.load(ckpt_path, map_location=device)
+[wind_gating_only] Test predictions saved to: ML_3\windno_2_no_diffusion_suite\wind_gating_only\results\test_predictions_grid.npz
+
+[wind_gating_only test metrics]
+  Regression MAE: {np.str_('eac4:pm2p5'): np.float32(0.058750175), np.str_('eac4:pm10'): np.float32(0.03539325), np.str_('eac4:go3'): np.float32(0.025873737), np.str_('eac4:no2'): np.float32(0.026673477)}
+  Regression RMSE: {np.str_('eac4:pm2p5'): np.float32(0.0698948), np.str_('eac4:pm10'): np.float32(0.064408876), np.str_('eac4:go3'): np.float32(0.050554425), np.str_('eac4:no2'): np.float32(0.039572384)}
+  Binary PM2.5: acc=0.703, prec=0.702, rec=0.937, f1=0.802
+  AQI: acc=0.429, macro-F1=0.298
+[Multi-horizon][oracle] shared anchors n=337 horizons=[1, 3, 7, 14, 30]
+[Multi-horizon][oracle] h=1: n=337 | binF1=0.807 | AQI macroF1=0.297
+[Multi-horizon][oracle] h=3: n=337 | binF1=0.807 | AQI macroF1=0.297
+[Multi-horizon][oracle] h=7: n=337 | binF1=0.808 | AQI macroF1=0.297
+[Multi-horizon][oracle] h=14: n=337 | binF1=0.808 | AQI macroF1=0.297
+[Multi-horizon][oracle] h=30: n=337 | binF1=0.806 | AQI macroF1=0.296
+[Multi-horizon][persist] shared anchors n=337 horizons=[1, 3, 7, 14, 30]
+[Multi-horizon][persist] h=1: n=337 | binF1=0.807 | AQI macroF1=0.297
+[Multi-horizon][persist] h=3: n=337 | binF1=0.810 | AQI macroF1=0.298
+[Multi-horizon][persist] h=7: n=337 | binF1=0.811 | AQI macroF1=0.300
+[Multi-horizon][persist] h=14: n=337 | binF1=0.810 | AQI macroF1=0.297
+[Multi-horizon][persist] h=30: n=337 | binF1=0.807 | AQI macroF1=0.294
+[wind_gating_only] Multi-horizon artifacts saved to: ML_3\windno_2_no_diffusion_suite\wind_gating_only\results
+[compare] Comparative plots + summaries saved to: ML_3\windno_2_no_diffusion_suite\compare
+[masked_rmse] Saved:
+  - ML_3\windno_2_no_diffusion_suite\compare\masked_event_rmse_summary.csv
+  - ML_3\windno_2_no_diffusion_suite\compare\masked_event_rmse_summary_pm25.csv
+  - ML_3\windno_2_no_diffusion_suite\compare\masked_event_rmse_summary_mean_across_targets.csv
+  - plots in: ML_3\windno_2_no_diffusion_suite\compare
